@@ -1,0 +1,82 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Header Styles */
+header {
+    background-color: #333;
+    padding: 10px 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+/* Content Styles */
+#content article {
+    margin-bottom: 30px;
+}
+
+/* Mobile Styles - Single Column Layout */
+@media (max-width: 768px) {
+    #content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li a {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+
+/* Desktop Styles - Multi-Column Layout */
+@media (min-width: 769px) {
+    #content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    article {
+        border: 1px solid #ddd;
+        padding: 15px;
+        background-color: #f9f9f9;
+    }
+
+    nav ul {
+        justify-content: center;
+    }
+
+    #reflection {
+        grid-column: span 3;
+    }
+}

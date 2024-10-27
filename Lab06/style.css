@@ -1,0 +1,63 @@
+<style>
+    /* General Styles */
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 20px;
+        background-color: #f4f4f4; /* Light background for better contrast */
+        color: #333; /* Main text color */
+    }
+
+    /* Headings */
+    h1, h2 {
+        color: #0056b3; /* Dark blue for headings for better visibility */
+    }
+
+    h1 {
+        margin-bottom: 20px; /* Space below the main heading */
+    }
+
+    /* Paragraphs */
+    p {
+        margin: 10px 0;
+        padding: 5px; /* Padding for better spacing */
+        background-color: #fff; /* White background for paragraphs */
+        border-left: 4px solid #007bff; /* Left border for emphasis */
+        border-radius: 5px; /* Rounded corners for aesthetics */
+    }
+
+    /* Links */
+    a {
+        color: #007bff; /* Blue for links */
+        text-decoration: none; /* Remove underline */
+        font-weight: bold; /* Make links stand out */
+    }
+
+    a:hover {
+        text-decoration: underline; /* Underline on hover for clarity */
+    }
+
+    /* Container for sections */
+    section {
+        margin-bottom: 30px; /* Space between sections */
+        padding: 15px; /* Padding inside each section */
+        background-color: #fff; /* White background for sections */
+        border-radius: 8px; /* Rounded corners */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        body {
+            margin: 10px; /* Reduce margin on smaller screens */
+        }
+
+        h1 {
+            font-size: 1.5em; /* Adjust font size for smaller screens */
+        }
+
+        h2 {
+            font-size: 1.2em; /* Adjust font size for smaller screens */
+        }
+    }
+</style>

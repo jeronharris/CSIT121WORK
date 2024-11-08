@@ -1,0 +1,36 @@
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #bb16dd;
+}
+
+header {
+    background-color: #09e892; 
+}
+
+nav {
+    background-color: #d80ae3;
+    color: #0bea43;
+}
+
+      
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        nav ul li a {
+            color: #01140e;
+            
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+           
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            
+        }
+    

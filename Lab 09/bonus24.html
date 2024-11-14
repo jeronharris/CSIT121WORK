@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <head>
-    <title>Reads the XML data using JavaScript</title>
+    <title>Toggle XML Data using JavaScript</title>
 
     <!-- CSS -->
     <style>
@@ -17,7 +17,7 @@
         }
 
         tr:nth-child(even) {
-            background-color: #7ce2af
+            background-color: #7ce2af;
         }
 
         th {
@@ -36,7 +36,6 @@
             border-radius: 30px;
             font-size: 30px;
             width: 500px;
-
         }
 
         .button:hover {
@@ -47,50 +46,50 @@
 
     <!--JavaScript-->
     <script>
+        let tableVisible = false;
+
+        function toggleTable() {
+            if (tableVisible) {
+                loadXMLDoc();
+                document.getElementById("toggleButton").textContent = "Close Employee Data";
+                tableVisible = true;
+            } else {
+                document.getElementById("id").innerHTML = "";  
+                document.getElementById("toggleButton").textContent = "Get Employee Data";
+                tableVisible = false;
+            }
+        }
+
         function loadXMLDoc() {
             let xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function () {
-
-                // Request finished and response 
-                // is ready and Status is "OK"
                 if (this.readyState == 4 && this.status == 200) {
                     empDetails(this);
                 }
             };
 
-            // employee.xml is the external xml file
             xmlhttp.open("GET", "employee.xml", true);
             xmlhttp.send();
         }
 
         function empDetails(xml) {
-            let i;
             let xmlDoc = xml.responseXML;
-            let table =
-                `<tr><th>Firstname</th><th>Lastname</th>
+            let table = `<tr><th>Firstname</th><th>Lastname</th>
                     <th>Title</th><th>Division</th>
                     <th>Building</th><th>Room</th>
                 </tr>`;
             let x = xmlDoc.getElementsByTagName("employee");
 
-            // Start to fetch the data by using TagName 
-            for (i = 0; i < x.length; i++) {
+            for (let i = 0; i < x.length; i++) {
                 table += "<tr><td>" +
-                    x[i].getElementsByTagName("firstname")[0]
-                        .childNodes[0].nodeValue + "</td><td>" +
-                    x[i].getElementsByTagName("lastname")[0]
-                        .childNodes[0].nodeValue + "</td><td>" +
-                    x[i].getElementsByTagName("title")[0]
-                        .childNodes[0].nodeValue + "</td><td>" +
-                    x[i].getElementsByTagName("division")[0]
-                        .childNodes[0].nodeValue + "</td><td>" +
-                    x[i].getElementsByTagName("building")[0]
-                        .childNodes[0].nodeValue + "</td><td>" +
-                    x[i].getElementsByTagName("room")[0]
-                        .childNodes[0].nodeValue + "</td></tr>";
+                    x[i].getElementsByTagName("firstname")[0].childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("lastname")[0].childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("division")[0].childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("building")[0].childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("room")[0].childNodes[0].nodeValue + "</td></tr>";
             }
 
-            // Print the xml data in table form
             document.getElementById("id").innerHTML = table;
         }
     </script>
@@ -98,8 +97,8 @@
 
 <body>
     <center>
-        <button type="button" class="button" onclick="loadXMLDoc()">
-            Get Employees Details
+        <button id="toggleButton" class="button" onclick="toggleTable()">
+            Get Employee Data
         </button>
     </center>
 

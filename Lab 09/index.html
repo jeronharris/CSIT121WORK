@@ -49,7 +49,7 @@
         let tableVisible = false;
 
         function toggleTable() {
-            if (!tableVisible) {
+            if (tableVisible) {
                 loadXMLDoc();
                 document.getElementById("toggleButton").textContent = "Close Employee Data";
                 tableVisible = true;

@@ -49,16 +49,17 @@
         let tableVisible = false;
 
         function toggleTable() {
-            if (tableVisible) {
-                loadXMLDoc();
-                document.getElementById("toggleButton").textContent = "Close Employee Data";
-                tableVisible = true;
-            } else {
-                document.getElementById("id").innerHTML = "";  // Clear the table
-                document.getElementById("toggleButton").textContent = "Get Employee Data";
-                tableVisible = false;
-            }
-        }
+    if (tableVisible) {
+        document.getElementById("id").innerHTML = "";  
+        document.getElementById("toggleButton").textContent = "Get Employee Data";
+        tableVisible = false;
+    } else {
+        loadXMLDoc();
+        document.getElementById("toggleButton").textContent = "Close Employee Data";
+        tableVisible = true;
+    }
+}
+
 
         function loadXMLDoc() {
             let xmlhttp = new XMLHttpRequest();

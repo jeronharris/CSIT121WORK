@@ -1,0 +1,120 @@
+
+     body {
+    font-family: Arial, sans-serif;
+    background-image: url(images.jpeg);
+    background-size: cover;
+   
+    
+  }
+
+
+header {
+    background-color: rgb(29, 10, 235); 
+    color: rgba(9, 8, 8, 0.876);
+    padding: 10px 0;
+    text-align: center;
+}
+
+   header h1 {
+    margin: 0;
+ }
+
+  nav ul {
+    padding: 20px;
+    margin: 20px;
+    display: contents;
+    background-color: #ce1111; 
+    
+}
+
+nav ul li {
+    margin: 0;
+} 
+
+      nav ul li a {
+    text-decoration: none;
+    color: rgb(9, 9, 10);
+      padding: 10px;
+    display: block;
+}
+
+   nav ul li a:hover {
+     background-color: rgba(11, 243, 77, 0.12); 
+}
+
+main {
+  padding: 20px;
+    margin: 20px auto;
+   background-color: rgba(6, 249, 55, 0.147); 
+ border-radius: 10px;
+}
+
+main h2 {
+    text-align: center;
+    color: rgb(4, 5, 5);
+}
+p {
+    color: rgb(248, 250, 249); 
+}
+
+
+table {
+width: 100%;
+    border-collapse: separate;
+    border-spacing:30px; 
+margin-top: 20px;
+}
+table th, table td {
+    padding: 15px;
+    text-align: left;
+background-color: #5d09eeef; 
+box-shadow: 0 20px  rgba(28, 7, 220, 0.9);
+border-radius: 8px; 
+}
+.centered-image {
+    display: block;             
+    margin-left: auto;          
+    margin-right: auto;         
+    max-width: 100%;          
+}
+
+ table th {
+background-color: #1408f5fe;
+color: white;
+font-size: 1.2em;
+text-transform: uppercase;
+}
+
+table td {
+    color: #333;
+    font-size: 1em;
+}
+
+
+table tr:hover td {
+    background-color: #f0f0f0c0; 
+   
+}
+
+
+table tr:nth-child(even) td {
+background-color: #fafafa; }
+
+
+footer {
+text-align: center;
+padding: 10px;
+background-color: rgba(0, 0, 0, 0.8);
+color: white;
+}
+
+
+@media (max-width: 600px) {
+nav ul {
+flex-direction: column;
+}
+
+main {
+padding: 10px;
+}
+}

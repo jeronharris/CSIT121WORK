@@ -61,50 +61,50 @@
 }
 
 
-        function loadXMLDoc() {
-            let xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                    empDetails(this);
-                }
-            };
+function loadXMLDoc() {
+let xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function () {
+if (this.readyState == 4 && this.status == 200) {
+empDetails(this);
+}
+};
 
-            xmlhttp.open("GET", "employee.xml", true);
-            xmlhttp.send();
-        }
+xmlhttp.open("GET", "employee.xml", true);
+xmlhttp.send();
+}
 
-        function empDetails(xml) {
-            let xmlDoc = xml.responseXML;
-            let table = `<tr><th>Firstname</th><th>Lastname</th>
-                    <th>Title</th><th>Division</th>
-                    <th>Building</th><th>Room</th>
-                </tr>`;
-            let x = xmlDoc.getElementsByTagName("employee");
+function empDetails(xml) {
+let xmlDoc = xml.responseXML;
+let table = `<tr><th>Firstname</th><th>Lastname</th>
+<th>Title</th><th>Division</th>
+<th>Building</th><th>Room</th>
+</tr>`;
+let x = xmlDoc.getElementsByTagName("employee");
 
-            for (let i = 0; i < x.length; i++) {
-                table += "<tr><td>" +
-                    x[i].getElementsByTagName("firstname")[0].childNodes[0].nodeValue + "</td><td>" +
-                    x[i].getElementsByTagName("lastname")[0].childNodes[0].nodeValue + "</td><td>" +
-                    x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue + "</td><td>" +
-                    x[i].getElementsByTagName("division")[0].childNodes[0].nodeValue + "</td><td>" +
-                    x[i].getElementsByTagName("building")[0].childNodes[0].nodeValue + "</td><td>" +
-                    x[i].getElementsByTagName("room")[0].childNodes[0].nodeValue + "</td></tr>";
-            }
+for (let i = 0; i < x.length; i++) {
+table += "<tr><td>" +
+x[i].getElementsByTagName("firstname")[0].childNodes[0].nodeValue + "</td><td>" +
+x[i].getElementsByTagName("lastname")[0].childNodes[0].nodeValue + "</td><td>" +
+x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue + "</td><td>" +
+x[i].getElementsByTagName("division")[0].childNodes[0].nodeValue + "</td><td>" +
+x[i].getElementsByTagName("building")[0].childNodes[0].nodeValue + "</td><td>" +
+x[i].getElementsByTagName("room")[0].childNodes[0].nodeValue + "</td></tr>";
+}
 
-            document.getElementById("id").innerHTML = table;
-        }
-    </script>
+document.getElementById("id").innerHTML = table;
+}
+</script>
 </head>
 
 <body>
-    <center>
-        <button id="toggleButton" class="button" onclick="toggleTable()">
-            Get Employee Data
-        </button>
-    </center>
+<center>
+<button id="toggleButton" class="button" onclick="toggleTable()">
+    Get Employee Data
+</button>
+</center>
 
-    <br><br>
-    <table id="id"></table>
+<br><br>
+<table id="id"></table>
 </body>
 
 </html>

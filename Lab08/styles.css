@@ -1,4 +1,4 @@
-/* Side Navigation Styles */
+
 .sidenav {
     height: 100%; 
     width: 0; 
@@ -39,7 +39,7 @@
     padding: 10px;
 }
 
-/* Main content shift when sidenav is open */
+
 #main {
     transition: margin-left 5s;
 }
